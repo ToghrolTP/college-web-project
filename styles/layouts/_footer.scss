@@ -1,0 +1,32 @@
+.site-footer {
+    background-color: $bg-secondary;
+    padding: $spacing-xl 0;
+    text-align: center;
+    border-top: 1px solid $bg-accent;
+    margin-top: $spacing-xxl;
+    
+    p {
+        font-size: $font-size-small;
+        color: $text-secondary;
+        margin-bottom: $spacing-sm;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    a {
+        color: $color-blue;
+        font-weight: $font-weight-medium;
+        
+        &:hover {
+            color: darken($color-blue, 15%);
+        }
+    }
+    
+    // Responsive spacing
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-lg 0;
+        margin-top: $spacing-xl;
+    }
+}

@@ -1,0 +1,12 @@
+.main-content {
+    min-height: 60vh; // Ensure footer stays at bottom
+    padding: $spacing-xxl 0;
+    
+    @media (max-width: $breakpoint-tablet) {
+        padding: $spacing-xl 0;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-lg 0;
+    }
+}
