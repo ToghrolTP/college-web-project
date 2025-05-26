@@ -5,3 +5,50 @@
 @import './layouts/layout';
 
 @import './components/components';
+
+// =================================================================
+// MAIN SCSS FILE - Updated for Page-Specific Architecture
+// =================================================================
+// This file orchestrates the import order for all SCSS partials,
+// including the new page-specific styles.
+
+// =================================================================
+// 1. VARIABLES - Foundation styles
+// =================================================================
+@import './variables/variables';          // Main variables file
+@import './variables/gruvbox_light';      // Color palette
+@import './variables/google_fonts';       // Font imports
+@import './variables/typography';         // Typography settings
+@import './variables/layout_and_spacing'; // Layout variables
+@import './variables/responsive_design';  // Breakpoints
+
+// =================================================================
+// 2. BASE STYLES - Global foundation
+// =================================================================
+@import 'base';                         // Reset, global typography, utilities
+
+// =================================================================
+// 3. LAYOUTS - Structural components
+// =================================================================
+@import 'layouts/layout';               // Base layout structure
+@import 'layouts/header';               // Site header
+@import 'layouts/main_naviation';      // Navigation menu
+@import 'layouts/main_content_area';    // Main content wrapper
+@import 'layouts/footer';               // Site footer
+
+// =================================================================
+// 4. COMPONENTS - Reusable UI elements
+// =================================================================
+@import 'components/components';        // Base component styles
+@import 'components/post_summary_card'; // Blog post cards
+
+// =================================================================
+// 5. PAGE-SPECIFIC STYLES - Individual page customizations
+// =================================================================
+@import 'pages/home';                   // Home page specific styles
+@import 'pages/about';                  // About page specific styles
+
+// Future pages can be added here:
+// @import 'pages/blog-post';
+// @import 'pages/archive';
+// @import 'pages/contact';

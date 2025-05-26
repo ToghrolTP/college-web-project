@@ -12,8 +12,8 @@
     <header class="site-header">
         <div class="container">
             <!-- Blog Title using JetBrains Mono -->
-            <h1 class="site-title">LogForT</h1>
-            <p class="site-description">Welcome to LogForT! A place where we explore topics in low-level.</p>
+            <h1 class="site-title">Log40</h1>
+            <p class="site-description">به لاگ‌فورتی خوش آمدید! اینجا به بررسی موضوعات در حوزه‌ی سطح پایین می‌پردازیم.</p>
         </div>
     </header>
 
@@ -21,10 +21,10 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Archive</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link">صفحه اصلی</a></li>
+                <li><a href="./about.html" class="nav-link">درباره</a></li>
+                <li><a href="#" class="nav-link">آرشیو</a></li>
+                <li><a href="#" class="nav-link">تماس‌ با ما</a></li>
             </ul>
         </div>
     </nav>
@@ -36,39 +36,39 @@
             <article class="post-summary">
                 <header class="post-header">
                     <h2 class="post-title">
-                        <a href="#">Understanding Ownership: Zero-Cost Abstractions in Practice</a>
+                        <a href="#">اصول مدیریت مستقیم حافظه و ثبات‌ها</a>
                     </h2>
                     <time class="post-date" datetime="2024-03-15">March 15, 2024</time>
                 </header>
                 <div class="post-excerpt">
-                    <p>Dive deep into Rust's ownership system and discover how compile-time guarantees eliminate runtime overhead. We'll explore move semantics, borrowing rules, and practical examples of zero-cost abstractions that make Rust both safe and fast.</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <p>این یک متن ساختگی در باب برنامه‌نویسی سطح پایین است. در این سطح از انتزاع، تمرکز اصلی بر روی مدیریت مستقیم حافظه و کار با اشاره‌گرها قرار دارد. هر بایت از حافظه دارای یک آدرس منحصر به فرد است و برنامه‌نویس مسئولیت تخصیص (allocation) و آزادسازی (deallocation) بلاک‌های حافظه را به صورت دستی بر عهده می‌گیرد تا از نشت حافظه (memory leak) جلوگیری به عمل آورد. دستکاری مستقیم ثبات‌های (registers) پردازنده، مانند ثبات شمارنده برنامه (Program Counter) و اشاره‌گر پشته (Stack Pointer)، امری رایج و ضروری برای بهینه‌سازی عملکرد است.</p>
+                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
                 </div>
             </article>
 
             <article class="post-summary">
                 <header class="post-header">
                     <h2 class="post-title">
-                        <a href="#">Async Rust: Futures, Tokio, and the Road to Concurrent Excellence</a>
+                        <a href="#">تعامل با سخت‌افزار: زبان اسمبلی و وقفه‌ها</a>
                     </h2>
                     <time class="post-date" datetime="2024-03-08">March 8, 2024</time>
                 </header>
                 <div class="post-excerpt">
-                    <p>Navigate the async ecosystem in Rust from fundamental Future traits to production-ready Tokio applications. Learn how Rust's approach to asynchronous programming delivers performance without sacrificing safety or ergonomics.</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <p>در زبان اسمبلی، هر دستورالعمل به صورت یک به یک با یک دستور ماشین (machine code) متناظر است. این به برنامه‌نویس کنترل دقیقی بر روی سخت‌افزار می‌دهد، اما به قیمت پیچیدگی و خوانایی پایین‌تر کد تمام می‌شود. مفاهیمی چون وقفه‌ها (interrupts)، که سیگنال‌هایی از سوی سخت‌افزار برای متوقف کردن روند عادی اجرای برنامه هستند، و همچنین دسترسی مستقیم به حافظه (DMA)، که به سخت‌افزار اجازه می‌دهد بدون دخالت پردازنده به حافظه دسترسی پیدا کند، از مباحث کلیدی در این حوزه به شمار می‌روند.</p>
+                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
                 </div>
             </article>
 
             <article class="post-summary">
                 <header class="post-header">
                     <h2 class="post-title">
-                        <a href="#">Unsafe Rust: When and How to Break the Rules Responsibly</a>
+                        <a href="#">امنیت و ساختار حافظه: پشته، هیپ و آسیب‌پذیری‌ها</a>
                     </h2>
                     <time class="post-date" datetime="2024-02-28">February 28, 2024</time>
                 </header>
                 <div class="post-excerpt">
-                    <p>Explore the unsafe keyword and raw pointer manipulation in Rust. Learn when unsafe code is necessary, how to minimize its scope, and techniques for maintaining memory safety invariants even when the compiler can't help.</p>
-                    <a href="#" class="read-more">Read more →</a>
+                    <p>سرریز بافر (buffer overflow) یکی از آسیب‌پذیری‌های امنیتی شایع در این سطح است که در آن، داده‌های ورودی بیش از ظرفیت بافر در حافظه نوشته شده و ممکن است باعث بازنویسی آدرس‌های بازگشتی و اجرای کدهای مخرب گردد. درک عمیق ساختار پشته (stack)، هیپ (heap) و نحوه فراخوانی توابع (function call conventions) برای جلوگیری از چنین خطاهایی حیاتی است. این متن صرفاً برای نمایش ساختار و فضای مفهومی این حوزه طراحی شده و هدف آن، پر کردن فضا با محتوایی تخصصی و مرتبط با معماری کامپیوتر است.</p>
+                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
                 </div>
             </article>
         </div>
@@ -77,7 +77,7 @@
     <!-- Site Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2024 The Borrow Checker. Built with Rust principles in mind.</p>
+            <p>&copy; 1404|2025 Log40. Built with low level principles in mind.</p>
             <p>
                 <a href="#">RSS Feed</a> | 
                 <a href="#">GitHub</a> | 

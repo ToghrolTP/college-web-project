@@ -1,0 +1,312 @@
+// =================================================================
+// ABOUT PAGE SPECIFIC STYLES
+// =================================================================
+// This file contains styles specific to the about page
+// including author bio, skills, and about-specific layout components
+
+// =================================================================
+// ABOUT PAGE BODY CLASS
+// =================================================================
+.page-about {
+    // About page might have different background or layout needs
+    direction: rtl;
+    text-align: justify;
+}
+
+// =================================================================
+// ABOUT PAGE MAIN CONTENT
+// =================================================================
+.page-about .main-content {
+    // About page typically needs more vertical spacing for content sections
+    padding: $spacing-xxl 0;
+    
+    @media (max-width: $breakpoint-tablet) {
+        padding: $spacing-xl 0;
+    }
+}
+
+// =================================================================
+// ABOUT PAGE HERO SECTION
+// =================================================================
+.about-hero {
+    text-align: center;
+    padding: $spacing-xxl 0;
+    background: linear-gradient(135deg, $bg-secondary 0%, $bg-accent 100%);
+    border-radius: $border-radius-lg;
+    margin-bottom: $spacing-xxl;
+    
+    .about-title {
+        font-family: $font-heading;
+        font-size: $font-size-xxl;
+        color: $color-aqua;
+        margin-bottom: $spacing-md;
+    }
+    
+    .about-subtitle {
+        font-size: $font-size-large;
+        color: $text-secondary;
+        font-weight: $font-weight-medium;
+        margin-bottom: $spacing-lg;
+    }
+    
+    .about-intro {
+        font-size: $font-size-medium;
+        line-height: $line-height-relaxed;
+        color: $text-primary;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-xl $spacing-md;
+        margin-bottom: $spacing-xl;
+        
+        .about-title {
+            font-size: $font-size-xl;
+        }
+        
+        .about-subtitle {
+            font-size: $font-size-medium;
+        }
+        
+        .about-intro {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+// =================================================================
+// ABOUT CONTENT SECTIONS
+// =================================================================
+.about-section {
+    background-color: $bg-primary;
+    padding: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    border-radius: $border-radius-md;
+    border: 1px solid $bg-accent;
+    
+    .section-title {
+        font-family: $font-heading;
+        font-size: $font-size-xl;
+        color: $color-aqua;
+        margin-bottom: $spacing-lg;
+        padding-bottom: $spacing-sm;
+        border-bottom: 2px solid $bg-accent;
+    }
+    
+    .section-content p {
+        font-size: $font-size-base;
+        line-height: $line-height-relaxed;
+        margin-bottom: $spacing-md;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-lg;
+        margin-bottom: $spacing-lg;
+        
+        .section-title {
+            font-size: $font-size-large;
+        }
+    }
+}
+
+// =================================================================
+// SKILLS & TECHNOLOGIES SECTION
+// =================================================================
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-lg;
+    margin-top: $spacing-lg;
+    
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+    }
+}
+
+.skill-category {
+    direction: ltr;
+    background-color: $bg-secondary;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    border: 1px solid $bg-accent;
+    
+    .category-title {
+        font-family: $font-heading;
+        font-size: $font-size-medium;
+        color: $color-blue;
+        margin-bottom: $spacing-md;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+    }
+    
+    .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            padding: $spacing-xs 0;
+            color: $text-primary;
+            font-size: $font-size-base;
+            border-bottom: 1px solid $bg-accent;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            &::before {
+                content: "▶";
+                color: $color-aqua;
+                margin-right: $spacing-sm;
+                font-size: $font-size-small;
+            }
+        }
+    }
+}
+
+// =================================================================
+// CONTACT/SOCIAL LINKS SECTION
+// =================================================================
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+    flex-wrap: wrap;
+    
+    .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-sm;
+        padding: $spacing-md $spacing-lg;
+        background-color: $bg-secondary;
+        border: 1px solid $bg-accent;
+        border-radius: $border-radius-md;
+        color: $color-blue;
+        text-decoration: none;
+        font-family: $font-heading;
+        font-weight: $font-weight-medium;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background-color: $color-blue;
+            color: $bg-primary;
+            border-color: $color-blue;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba($color-blue, 0.2);
+        }
+        
+        // Icons or symbols can be added here
+        &.github::before { content: "⚡"; }
+        &.email::before { content: "✉"; }
+        &.twitter::before { content: "🐦"; }
+        &.linkedin::before { content: "💼"; }
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        gap: $spacing-md;
+        
+        .contact-link {
+            padding: $spacing-sm $spacing-md;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+// =================================================================
+// ABOUT PAGE TIMELINE (Optional)
+// =================================================================
+.timeline {
+    position: relative;
+    margin-top: $spacing-xl;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: $bg-accent;
+        
+        @media (max-width: $breakpoint-tablet) {
+            left: $spacing-lg;
+        }
+    }
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-xl;
+    position: relative;
+    
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+        
+        .timeline-content {
+            text-align: right;
+        }
+        
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: row;
+            
+            .timeline-content {
+                text-align: left;
+            }
+        }
+    }
+    
+    .timeline-content {
+        flex: 1;
+        background-color: $bg-secondary;
+        padding: $spacing-lg;
+        border-radius: $border-radius-md;
+        border: 1px solid $bg-accent;
+        margin: 0 $spacing-xl;
+        
+        .timeline-date {
+            font-family: $font-heading;
+            font-size: $font-size-small;
+            color: $color-gray;
+            font-weight: $font-weight-semibold;
+        }
+        
+        .timeline-title {
+            font-size: $font-size-large;
+            color: $color-aqua;
+            margin: $spacing-sm 0;
+        }
+        
+        .timeline-description {
+            color: $text-primary;
+            line-height: $line-height-relaxed;
+        }
+        
+        @media (max-width: $breakpoint-tablet) {
+            margin: 0 0 0 $spacing-xxl;
+        }
+    }
+    
+    .timeline-marker {
+        width: 12px;
+        height: 12px;
+        background-color: $color-aqua;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        
+        @media (max-width: $breakpoint-tablet) {
+            left: $spacing-lg;
+        }
+    }
+}
