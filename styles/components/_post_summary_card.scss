@@ -112,6 +112,7 @@
         border-color: darken($color-blue, 15%);
     }
     
+    // Arrow spacing
     &::after {
         content: '';
         margin-left: $spacing-xs;
