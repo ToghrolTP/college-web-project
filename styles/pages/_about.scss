@@ -1,23 +1,9 @@
-// =================================================================
-// ABOUT PAGE SPECIFIC STYLES
-// =================================================================
-// This file contains styles specific to the about page
-// including author bio, skills, and about-specific layout components
-
-// =================================================================
-// ABOUT PAGE BODY CLASS
-// =================================================================
 .page-about {
-    // About page might have different background or layout needs
     direction: rtl;
     text-align: justify;
 }
 
-// =================================================================
-// ABOUT PAGE MAIN CONTENT
-// =================================================================
 .page-about .main-content {
-    // About page typically needs more vertical spacing for content sections
     padding: $spacing-xxl 0;
     
     @media (max-width: $breakpoint-tablet) {
@@ -25,9 +11,6 @@
     }
 }
 
-// =================================================================
-// ABOUT PAGE HERO SECTION
-// =================================================================
 .about-hero {
     text-align: center;
     padding: $spacing-xxl 0;
@@ -53,7 +36,8 @@
         font-size: $font-size-medium;
         line-height: $line-height-relaxed;
         color: $text-primary;
-        max-width: 600px;
+        max-width: 680px;
+        text-align: justify;
         margin: 0 auto;
     }
     
@@ -75,9 +59,6 @@
     }
 }
 
-// =================================================================
-// ABOUT CONTENT SECTIONS
-// =================================================================
 .about-section {
     background-color: $bg-primary;
     padding: $spacing-xl;
@@ -114,9 +95,6 @@
     }
 }
 
-// =================================================================
-// SKILLS & TECHNOLOGIES SECTION
-// =================================================================
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -171,9 +149,6 @@
     }
 }
 
-// =================================================================
-// CONTACT/SOCIAL LINKS SECTION
-// =================================================================
 .contact-links {
     display: flex;
     justify-content: center;
@@ -185,7 +160,7 @@
         display: inline-flex;
         align-items: center;
         gap: $spacing-sm;
-        padding: $spacing-md $spacing-lg;
+        padding: $spacing-sm $spacing-lg;
         background-color: $bg-secondary;
         border: 1px solid $bg-accent;
         border-radius: $border-radius-md;
@@ -203,9 +178,8 @@
             box-shadow: 0 4px 8px rgba($color-blue, 0.2);
         }
         
-        // Icons or symbols can be added here
         &.github::before { content: "⚡"; }
-        &.email::before { content: "✉"; }
+        &.email::before { content: "✉️"; }
         &.twitter::before { content: "🐦"; }
         &.linkedin::before { content: "💼"; }
     }
@@ -216,97 +190,6 @@
         .contact-link {
             padding: $spacing-sm $spacing-md;
             font-size: $font-size-small;
-        }
-    }
-}
-
-// =================================================================
-// ABOUT PAGE TIMELINE (Optional)
-// =================================================================
-.timeline {
-    position: relative;
-    margin-top: $spacing-xl;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 100%;
-        background-color: $bg-accent;
-        
-        @media (max-width: $breakpoint-tablet) {
-            left: $spacing-lg;
-        }
-    }
-}
-
-.timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: $spacing-xl;
-    position: relative;
-    
-    &:nth-child(odd) {
-        flex-direction: row-reverse;
-        
-        .timeline-content {
-            text-align: right;
-        }
-        
-        @media (max-width: $breakpoint-tablet) {
-            flex-direction: row;
-            
-            .timeline-content {
-                text-align: left;
-            }
-        }
-    }
-    
-    .timeline-content {
-        flex: 1;
-        background-color: $bg-secondary;
-        padding: $spacing-lg;
-        border-radius: $border-radius-md;
-        border: 1px solid $bg-accent;
-        margin: 0 $spacing-xl;
-        
-        .timeline-date {
-            font-family: $font-heading;
-            font-size: $font-size-small;
-            color: $color-gray;
-            font-weight: $font-weight-semibold;
-        }
-        
-        .timeline-title {
-            font-size: $font-size-large;
-            color: $color-aqua;
-            margin: $spacing-sm 0;
-        }
-        
-        .timeline-description {
-            color: $text-primary;
-            line-height: $line-height-relaxed;
-        }
-        
-        @media (max-width: $breakpoint-tablet) {
-            margin: 0 0 0 $spacing-xxl;
-        }
-    }
-    
-    .timeline-marker {
-        width: 12px;
-        height: 12px;
-        background-color: $color-aqua;
-        border-radius: 50%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        
-        @media (max-width: $breakpoint-tablet) {
-            left: $spacing-lg;
         }
     }
 }

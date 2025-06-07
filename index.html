@@ -1,89 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Borrow Checker - Rust Programming Blog</title>
-    <!-- Main SCSS compiled CSS file -->
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
-    <!-- Site Header with Navigation -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Log40 Blog</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
     <header class="site-header">
-        <div class="container">
-            <!-- Blog Title using JetBrains Mono -->
-            <h1 class="site-title">Log40</h1>
-            <p class="site-description">به لاگ‌فورتی خوش آمدید! اینجا به بررسی موضوعات در حوزه‌ی سطح پایین می‌پردازیم.</p>
-        </div>
+      <div class="container">
+        <h1 class="site-title">Log40</h1>
+        <p class="site-description">
+          به لاگ‌فورتی خوش آمدید! اینجا به بررسی موضوعات در حوزه‌ی سطح پایین
+          می‌پردازیم.
+        </p>
+      </div>
     </header>
 
-    <!-- Main Navigation -->
     <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">صفحه اصلی</a></li>
-                <li><a href="./about.html" class="nav-link">درباره</a></li>
-                <li><a href="#" class="nav-link">آرشیو</a></li>
-                <li><a href="#" class="nav-link">تماس‌ با ما</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">صفحه اصلی</a></li>
+          <li><a href="./about.html" class="nav-link">درباره</a></li>
+          <li><a href="#" class="nav-link">آرشیو</a></li>
+          <li><a href="#" class="nav-link">تماس‌ با من</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Blog Post Summaries -->
-            <article class="post-summary">
-                <header class="post-header">
-                    <h2 class="post-title">
-                        <a href="#">اصول مدیریت مستقیم حافظه و ثبات‌ها</a>
-                    </h2>
-                    <time class="post-date" datetime="2024-03-15">March 15, 2024</time>
-                </header>
-                <div class="post-excerpt">
-                    <p>این یک متن ساختگی در باب برنامه‌نویسی سطح پایین است. در این سطح از انتزاع، تمرکز اصلی بر روی مدیریت مستقیم حافظه و کار با اشاره‌گرها قرار دارد. هر بایت از حافظه دارای یک آدرس منحصر به فرد است و برنامه‌نویس مسئولیت تخصیص (allocation) و آزادسازی (deallocation) بلاک‌های حافظه را به صورت دستی بر عهده می‌گیرد تا از نشت حافظه (memory leak) جلوگیری به عمل آورد. دستکاری مستقیم ثبات‌های (registers) پردازنده، مانند ثبات شمارنده برنامه (Program Counter) و اشاره‌گر پشته (Stack Pointer)، امری رایج و ضروری برای بهینه‌سازی عملکرد است.</p>
-                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
-                </div>
-            </article>
-
-            <article class="post-summary">
-                <header class="post-header">
-                    <h2 class="post-title">
-                        <a href="#">تعامل با سخت‌افزار: زبان اسمبلی و وقفه‌ها</a>
-                    </h2>
-                    <time class="post-date" datetime="2024-03-08">March 8, 2024</time>
-                </header>
-                <div class="post-excerpt">
-                    <p>در زبان اسمبلی، هر دستورالعمل به صورت یک به یک با یک دستور ماشین (machine code) متناظر است. این به برنامه‌نویس کنترل دقیقی بر روی سخت‌افزار می‌دهد، اما به قیمت پیچیدگی و خوانایی پایین‌تر کد تمام می‌شود. مفاهیمی چون وقفه‌ها (interrupts)، که سیگنال‌هایی از سوی سخت‌افزار برای متوقف کردن روند عادی اجرای برنامه هستند، و همچنین دسترسی مستقیم به حافظه (DMA)، که به سخت‌افزار اجازه می‌دهد بدون دخالت پردازنده به حافظه دسترسی پیدا کند، از مباحث کلیدی در این حوزه به شمار می‌روند.</p>
-                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
-                </div>
-            </article>
-
-            <article class="post-summary">
-                <header class="post-header">
-                    <h2 class="post-title">
-                        <a href="#">امنیت و ساختار حافظه: پشته، هیپ و آسیب‌پذیری‌ها</a>
-                    </h2>
-                    <time class="post-date" datetime="2024-02-28">February 28, 2024</time>
-                </header>
-                <div class="post-excerpt">
-                    <p>سرریز بافر (buffer overflow) یکی از آسیب‌پذیری‌های امنیتی شایع در این سطح است که در آن، داده‌های ورودی بیش از ظرفیت بافر در حافظه نوشته شده و ممکن است باعث بازنویسی آدرس‌های بازگشتی و اجرای کدهای مخرب گردد. درک عمیق ساختار پشته (stack)، هیپ (heap) و نحوه فراخوانی توابع (function call conventions) برای جلوگیری از چنین خطاهایی حیاتی است. این متن صرفاً برای نمایش ساختار و فضای مفهومی این حوزه طراحی شده و هدف آن، پر کردن فضا با محتوایی تخصصی و مرتبط با معماری کامپیوتر است.</p>
-                    <a href="#" class="read-more">→ بیشتر بخوانید</a>
-                </div>
-            </article>
+    <div class="content-controls">
+      <div class="container">
+        <button id="expand-all" class="control-btn">گسترش همه پست‌ها</button>
+        <button id="collapse-all" class="control-btn">
+          جمع کردن همه پست‌ها
+        </button>
+        <button id="copy-links" class="control-btn">کپی لینک‌ها</button>
+        <div class="font-controls">
+          <button id="font-decrease" class="control-btn">A-</button>
+          <button id="font-increase" class="control-btn">A+</button>
+          <button id="font-reset" class="control-btn">Reset</button>
         </div>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="container">
+        <article class="post-summary" data-post-id="1">
+          <header class="post-header">
+            <h2 class="post-title">
+              <a href="#" class="post-link"
+                >اصول مدیریت مستقیم حافظه و ثبات‌ها</a
+              >
+              <button
+                class="copy-url"
+                data-url="https://log40.com/memory-management"
+              >
+                📋
+              </button>
+            </h2>
+            <time class="post-date" datetime="2025-03-15">۲۵ اسفند ۱۴۰۳</time>
+          </header>
+          <div class="post-excerpt">
+            <p class="excerpt-text">
+              این یک متن ساختگی در باب برنامه‌نویسی سطح پایین است. در این سطح از
+              انتزاع، تمرکز اصلی بر روی مدیریت مستقیم حافظه و کار با اشاره‌گرها
+              قرار دارد.
+            </p>
+            <div class="full-content" style="display: none">
+              <p>
+                هر بایت از حافظه دارای یک آدرس منحصر به فرد است و برنامه‌نویس
+                مسئولیت تخصیص (allocation) و آزادسازی (deallocation) بلاک‌های
+                حافظه را به صورت دستی بر عهده می‌گیرد تا از نشت حافظه (memory
+                leak) جلوگیری به عمل آورد.
+              </p>
+              <p>
+                دستکاری مستقیم ثبات‌های (registers) پردازنده، مانند ثبات شمارنده
+                برنامه (Program Counter) و اشاره‌گر پشته (Stack Pointer)، امری
+                رایج و ضروری برای بهینه‌سازی عملکرد است.
+              </p>
+              <pre><code class="language-c">void* ptr = malloc(sizeof(int) * 100);
+if (ptr != NULL) {
+    // Use allocated memory
+    free(ptr);
+    ptr = NULL;
+}</code></pre>
+            </div>
+            <button class="toggle-content">→ بیشتر بخوانید</button>
+          </div>
+        </article>
+
+        <article class="post-summary" data-post-id="2">
+          <header class="post-header">
+            <h2 class="post-title">
+              <a href="#" class="post-link"
+                >تعامل با سخت‌افزار: زبان اسمبلی و وقفه‌ها</a
+              >
+              <button
+                class="copy-url"
+                data-url="https://log40.com/assembly-interrupts"
+              >
+                📋
+              </button>
+            </h2>
+            <time class="post-date" datetime="2025-03-08">۱۸ اسفند ۱۴۰۳</time>
+          </header>
+          <div class="post-excerpt">
+            <p class="excerpt-text">
+              در زبان اسمبلی، هر دستورالعمل به صورت یک به یک با یک دستور ماشین
+              (machine code) متناظر است. این به برنامه‌نویس کنترل دقیقی بر روی
+              سخت‌افزار می‌دهد.
+            </p>
+            <div class="full-content" style="display: none">
+              <p>
+                اما به قیمت پیچیدگی و خوانایی پایین‌تر کد تمام می‌شود. مفاهیمی
+                چون وقفه‌ها (interrupts)، که سیگنال‌هایی از سوی سخت‌افزار برای
+                متوقف کردن روند عادی اجرای برنامه هستند، و همچنین دسترسی مستقیم
+                به حافظه (DMA)، که به سخت‌افزار اجازه می‌دهد بدون دخالت پردازنده
+                به حافظه دسترسی پیدا کند، از مباحث کلیدی در این حوزه به شمار
+                می‌روند.
+              </p>
+              <pre><code class="language-assembly">mov eax, 1          ; System call number
+mov ebx, 0          ; Exit status
+int 0x80            ; Interrupt - system call</code></pre>
+            </div>
+            <button class="toggle-content">→ بیشتر بخوانید</button>
+          </div>
+        </article>
+
+        <article class="post-summary" data-post-id="3">
+          <header class="post-header">
+            <h2 class="post-title">
+              <a href="#" class="post-link"
+                >امنیت و ساختار حافظه: پشته، هیپ و آسیب‌پذیری‌ها</a
+              >
+              <button
+                class="copy-url"
+                data-url="https://log40.com/memory-security">
+                📋
+              </button>
+            </h2>
+            <time class="post-date" datetime="2025-02-28">۱۰ اسفند ۱۴۰۳</time>
+          </header>
+          <div class="post-excerpt">
+            <p class="excerpt-text">
+              سرریز بافر (buffer overflow) یکی از آسیب‌پذیری‌های امنیتی شایع در
+              این سطح است که در آن، داده‌های ورودی بیش از ظرفیت بافر در حافظه
+              نوشته شده.
+            </p>
+            <div class="full-content" style="display: none">
+              <p>
+                و ممکن است باعث بازنویسی آدرس‌های بازگشتی و اجرای کدهای مخرب
+                گردد. درک عمیق ساختار پشته (stack)، هیپ (heap) و نحوه فراخوانی
+                توابع (function call conventions) برای جلوگیری از چنین خطاهایی
+                حیاتی است.
+              </p>
+              <p>
+                این متن صرفاً برای نمایش ساختار و فضای مفهومی این حوزه طراحی شده
+                و هدف آن، پر کردن فضا با محتوایی تخصصی و مرتبط با معماری
+                کامپیوتر است.
+              </p>
+              <pre><code class="language-c">char buffer[10];
+// Vulnerable to buffer overflow
+strcpy(buffer, user_input);
+
+// Safer approach
+strncpy(buffer, user_input, sizeof(buffer) - 1);
+buffer[sizeof(buffer) - 1] = '\0';</code></pre>
+            </div>
+            <button class="toggle-content">→ بیشتر بخوانید</button>
+          </div>
+        </article>
+      </div>
     </main>
 
-    <!-- Site Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 1404|2025 Log40. Built with low level principles in mind.</p>
-            <p>
-                <a href="#">RSS Feed</a> | 
-                <a href="#">GitHub</a> | 
-                <a href="#">Twitter</a>
-            </p>
-        </div>
+      <div class="container">
+        <p>&copy; 1404|2025 Log40. Built with low level principles in mind.</p>
+        <p>
+          <a href="#">RSS Feed</a> | <a href="#">GitHub</a> |
+          <a href="#">Twitter</a>
+        </p>
+      </div>
     </footer>
-</body>
+
+    <script src="scripts/index.js"></script>
+  </body>
 </html>

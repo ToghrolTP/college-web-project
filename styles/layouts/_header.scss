@@ -16,7 +16,6 @@
     color: $text-primary;
     margin-bottom: $spacing-sm;
     
-    // Responsive font sizing
     @media (max-width: $breakpoint-mobile) {
         font-size: $font-size-xl;
     }

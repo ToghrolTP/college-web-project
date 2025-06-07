@@ -1,8 +1,3 @@
-// =================================================================
-// BASE STYLES - Reset, Typography, and Global Styles
-// =================================================================
-
-// CSS Reset and Box Sizing
 *, 
 *::before, 
 *::after {
@@ -11,9 +6,8 @@
     padding: 0;
 }
 
-// Root HTML and Body Styles
 html {
-    font-size: 16px; // Base font size for rem calculations
+    font-size: 16px;
     scroll-behavior: smooth;
 }
 
@@ -26,17 +20,8 @@ body {
     color: $text-primary;
     background-color: $bg-primary;
     
-    // Improve text rendering
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
-// =================================================================
-// TYPOGRAPHY STYLES
-// =================================================================
-
-// Headings - Using JetBrains Mono for code-oriented aesthetic
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-heading;
     font-weight: $font-weight-semibold;
@@ -62,7 +47,6 @@ h4, h5, h6 {
     font-size: $font-size-medium;
 }
 
-// Paragraph Styles
 p {
     margin-bottom: $spacing-md;
     color: $text-primary;
@@ -72,7 +56,6 @@ p {
     }
 }
 
-// Link Styles - Using Gruvbox Blue
 a {
     color: $color-blue;
     text-decoration: none;
@@ -89,7 +72,6 @@ a {
     }
 }
 
-// List Styles
 ul, ol {
     margin-bottom: $spacing-md;
     padding-left: $spacing-lg;
@@ -99,7 +81,6 @@ li {
     margin-bottom: $spacing-xs;
 }
 
-// Code and Preformatted Text
 code, pre {
     font-family: $font-code;
     font-size: $font-size-small;
@@ -115,7 +96,6 @@ code {
 pre {
     padding: $spacing-md;
     border-radius: $border-radius-md;
-    overflow-x: auto;
     margin-bottom: $spacing-md;
     
     code {
@@ -124,38 +104,18 @@ pre {
     }
 }
 
-// Time Elements
 time {
     font-size: $font-size-small;
-    color: $color-gray; // Using specified gray for dates
+    color: $color-gray;
     font-weight: $font-weight-normal;
 }
 
-// =================================================================
-// UTILITY CLASSES
-// =================================================================
-
-// Container for responsive layout
 .container {
     max-width: $container-max-width;
     margin: 0 auto;
     padding: 0 $container-padding;
     
-    // Responsive padding
     @media (max-width: $breakpoint-tablet) {
         padding: 0 $spacing-md;
     }
-}
-
-// Screen reader only content
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
 }

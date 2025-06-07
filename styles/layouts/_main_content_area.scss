@@ -1,5 +1,5 @@
 .main-content {
-    min-height: 60vh; // Ensure footer stays at bottom
+    min-height: 60vh;
     padding: $spacing-xxl 0;
     
     @media (max-width: $breakpoint-tablet) {

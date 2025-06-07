@@ -6,49 +6,23 @@
 
 @import './components/components';
 
-// =================================================================
-// MAIN SCSS FILE - Updated for Page-Specific Architecture
-// =================================================================
-// This file orchestrates the import order for all SCSS partials,
-// including the new page-specific styles.
+@import './variables/variables';
+@import './variables/gruvbox_light';
+@import './variables/google_fonts';
+@import './variables/typography';
+@import './variables/layout_and_spacing';
+@import './variables/responsive_design';
 
-// =================================================================
-// 1. VARIABLES - Foundation styles
-// =================================================================
-@import './variables/variables';          // Main variables file
-@import './variables/gruvbox_light';      // Color palette
-@import './variables/google_fonts';       // Font imports
-@import './variables/typography';         // Typography settings
-@import './variables/layout_and_spacing'; // Layout variables
-@import './variables/responsive_design';  // Breakpoints
+@import 'base';
 
-// =================================================================
-// 2. BASE STYLES - Global foundation
-// =================================================================
-@import 'base';                         // Reset, global typography, utilities
+@import 'layouts/layout';
+@import 'layouts/header';
+@import 'layouts/main_naviation';
+@import 'layouts/main_content_area';
+@import 'layouts/footer';
 
-// =================================================================
-// 3. LAYOUTS - Structural components
-// =================================================================
-@import 'layouts/layout';               // Base layout structure
-@import 'layouts/header';               // Site header
-@import 'layouts/main_naviation';      // Navigation menu
-@import 'layouts/main_content_area';    // Main content wrapper
-@import 'layouts/footer';               // Site footer
+@import 'components/components';
+@import 'components/post_summary_card';
 
-// =================================================================
-// 4. COMPONENTS - Reusable UI elements
-// =================================================================
-@import 'components/components';        // Base component styles
-@import 'components/post_summary_card'; // Blog post cards
-
-// =================================================================
-// 5. PAGE-SPECIFIC STYLES - Individual page customizations
-// =================================================================
-@import 'pages/home';                   // Home page specific styles
-@import 'pages/about';                  // About page specific styles
-
-// Future pages can be added here:
-// @import 'pages/blog-post';
-// @import 'pages/archive';
-// @import 'pages/contact';
+@import 'pages/home';
+@import 'pages/about';

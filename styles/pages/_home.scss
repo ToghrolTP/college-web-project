@@ -1,173 +1,224 @@
-// =================================================================
-// HOME PAGE SPECIFIC STYLES
-// =================================================================
-// This file contains styles specific to the home page (index.html)
-// including post summaries layout and home-specific components
-
-// =================================================================
-// HOME PAGE BODY CLASS
-// =================================================================
 .page-home {
-    // Home page specific body modifications can go here
-    // For example: specific background patterns, spacing adjustments
-    direction: rtl;;
 }
 
-// =================================================================
-// HOME PAGE MAIN CONTENT ADJUSTMENTS
-// =================================================================
-.page-home .main-content {
-    // Home page might need different spacing than other pages
-    padding: $spacing-xxl 0;
+.content-controls {
+    background: $bg-secondary;
+    padding: $spacing-md 0;
+    margin-bottom: $spacing-lg;
+    border-bottom: 1px solid $bg-accent;
+    border-top: 1px solid $bg-accent;
     
-    @media (max-width: $breakpoint-tablet) {
-        padding: $spacing-xl 0;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-        padding: $spacing-lg 0;
-    }
-}
-
-// =================================================================
-// BLOG POST SUMMARIES CONTAINER (Home Page Specific)
-// =================================================================
-.home-posts-container {
-    // Container for all post summaries on home page
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
-    
-    @media (max-width: $breakpoint-tablet) {
-        gap: $spacing-lg;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-        gap: $spacing-md;
-    }
-}
-
-// =================================================================
-// HOME PAGE POST SUMMARY ENHANCEMENTS
-// =================================================================
-.page-home .post-summary {
-    // Home page specific post summary styling
-    // These override the base post-summary styles for the home page only
-    
-    // Enhanced hover effects for home page
-    &:hover {
-        background-color: $bg-secondary;
-        border-color: darken($bg-accent, 15%);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba($text-primary, 0.12);
-    }
-    
-    // Add subtle animation delay for staggered effect
-    &:nth-child(1) { transition-delay: 0ms; }
-    &:nth-child(2) { transition-delay: 50ms; }
-    &:nth-child(3) { transition-delay: 100ms; }
-}
-
-// =================================================================
-// HOME PAGE INTRO SECTION (Optional)
-// =================================================================
-.home-intro {
-    text-align: center;
-    margin-bottom: $spacing-xxl;
-    padding: $spacing-xl 0;
-    background-color: $bg-secondary;
-    border-radius: $border-radius-lg;
-    
-    h2 {
-        font-family: $font-heading;
-        color: $color-aqua;
-        margin-bottom: $spacing-md;
-    }
-    
-    p {
-        font-size: $font-size-medium;
-        color: $text-secondary;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-        margin-bottom: $spacing-xl;
-        padding: $spacing-lg $spacing-md;
+    .container {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
         
-        h2 {
-            font-size: $font-size-large;
-        }
-        
-        p {
-            font-size: $font-size-base;
+        @media (max-width: $breakpoint-mobile) {
+            justify-content: center;
         }
     }
-}
-
-// =================================================================
-// HOME PAGE FEATURED POST (Optional Enhancement)
-// =================================================================
-.featured-post {
-    border: 2px solid $color-aqua;
-    background: linear-gradient(135deg, $bg-primary 0%, $bg-secondary 100%);
-    position: relative;
     
-    &::before {
-        content: "Featured";
-        position: absolute;
-        top: -1px;
-        right: $spacing-md;
-        background-color: $color-aqua;
-        color: $bg-primary;
-        padding: $spacing-xs $spacing-sm;
-        font-size: $font-size-small;
-        font-weight: $font-weight-semibold;
-        font-family: $font-heading;
-        border-radius: 0 0 $border-radius-sm $border-radius-sm;
-    }
-    
-    .post-title a {
-        color: darken($color-aqua, 10%);
-    }
-}
-
-// =================================================================
-// HOME PAGE PAGINATION (Future Enhancement)
-// =================================================================
-.home-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: $spacing-xxl;
-    gap: $spacing-md;
-    
-    .pagination-link {
-        font-family: $font-heading;
-        font-weight: $font-weight-medium;
+    .control-btn {
         padding: $spacing-sm $spacing-md;
         border: 1px solid $bg-accent;
-        border-radius: $border-radius-sm;
-        background-color: $bg-primary;
-        color: $color-blue;
-        text-decoration: none;
+        background: $bg-primary;
+        color: $text-primary;
+        cursor: pointer;
+        border-radius: $border-radius-md;
+        font-size: $font-size-small;
+        font-family: $font-heading;
+        font-weight: $font-weight-medium;
         transition: all 0.2s ease;
         
         &:hover {
-            background-color: $color-blue;
-            color: $bg-primary;
-            border-color: $color-blue;
+            background: $bg-accent;
+            border-color: darken($bg-accent, 10%);
+            transform: translateY(-1px);
         }
         
-        &.current {
-            background-color: $color-aqua;
-            color: $bg-primary;
-            border-color: $color-aqua;
+        &:active {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: $breakpoint-mobile) {
+            padding: $spacing-xs;
+            font-size: $font-size-xl;
         }
     }
     
+    .font-controls {
+        display: flex;
+        gap: 2px;
+        margin-left: auto;
+        
+        @media (max-width: $breakpoint-mobile) {
+            margin-left: 0;
+        }
+        
+        .control-btn {
+            min-width: 32px;
+            text-align: center;
+            
+            &:first-child {
+                border-radius: 0 $border-radius-lg $border-radius-lg 0
+            }
+            
+            &:last-child {
+                border-radius: $border-radius-lg 0 0 $border-radius-lg;
+            }
+            
+            &:not(:first-child):not(:last-child) {
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.main-content {
+    padding: $spacing-xl 0;
+    
+    @media (max-width: $breakpoint-tablet) {
+        padding: $spacing-lg 0;
+    }
+    
     @media (max-width: $breakpoint-mobile) {
-        margin-top: $spacing-xl;
-        flex-wrap: wrap;
+        padding: $spacing-md 0;
+    }
+}
+
+.page-home .post-summary {
+    &:hover {
+        background-color: $bg-secondary;
+        border-color: darken($bg-accent, 15%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba($text-primary, 0.1);
+    }
+
+    .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: $spacing-md;
+        
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            gap: $spacing-xs;
+        }
+    }
+    
+    
+    .copy-url {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: $spacing-xs;
+        opacity: 0.5;
+        transition: all 0.2s ease;
+        border-radius: $border-radius-sm;
+        
+        &:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: $breakpoint-mobile) {
+            padding: $spacing-xs $spacing-sm;
+        }
+    }
+}
+
+.post-excerpt {
+    .excerpt-text {
+        transition: opacity 0.3s ease;
+    }
+    
+    .full-content {
+        margin-top: $spacing-md;
+        padding-top: $spacing-md;
+        border-top: 1px dashed $bg-accent;
+        animation: fadeIn 0.3s ease;
+        
+        p {
+            margin-bottom: $spacing-md;
+            
+            // &:last-of-type {
+            //     margin-bottom: $spacing-sm;
+            // }
+        }
+        
+        pre {
+            direction: ltr;
+            background: darken($bg-secondary, 2%);
+            padding: $spacing-md;
+            border-radius: $border-radius-sm;
+            overflow-x: auto;
+            margin: $spacing-md 0;
+            border-left: 3px solid $color-aqua;
+            font-size: $font-size-small;
+            
+            code {
+                font-family: "JetBrains Mono";
+                color: $text-primary;
+                line-height: 1.4;
+            }
+        }
+    }
+    
+    .toggle-content {
+        display: inline-flex;
+        align-items: center;
+        margin-top: $spacing-sm;
+        padding: $spacing-sm $spacing-md;
+        background: transparent;
+        border: 1px solid $bg-accent;
+        border-radius: $border-radius-md;
+        color: $color-blue;
+        font-family: $font-heading;
+        font-weight: $font-weight-medium;
+        font-size: $font-size-small;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background: $color-blue;
+            color: $bg-primary;
+            border-color: $color-blue;
+            transform: translateX(-2px);
+        }
+        
+        &.expanded {
+            background: lighten($color-aqua, 40%);
+            color: darken($color-aqua, 20%);
+            border-color: $color-aqua;
+            
+            &:hover {
+                background: $color-aqua;
+                color: $bg-primary;
+                transform: translateX(2px);
+            }
+        }
+    }
+}
+
+.notification {
+    position: fixed;
+    top: $spacing-lg;
+    right: $spacing-lg;
+    background: $text-primary;
+    color: $bg-primary;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
+    z-index: 1000;
+    font-size: $font-size-small;
+    font-family: $font-heading;
+    font-weight: $font-weight-medium;
+    box-shadow: 0 4px 12px rgba($text-primary, 0.3);
+    border: 1px solid $color-aqua;
+    
+    @media (max-width: $breakpoint-mobile) {
+        top: $spacing-md;
+        right: $spacing-md;
+        left: $spacing-md;
+        text-align: center;
     }
 }
